@@ -87,7 +87,7 @@
   </button>
   <span class="material-icons">home</span>
 </div>
-  </div> 
+  </div>
 </template>
 
 <script>
