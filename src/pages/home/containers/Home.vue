@@ -1,0 +1,59 @@
+<template>
+  <div>
+    <header>
+      <div class="collapse bg-dark" id="navbarHeader">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-8 col-md-7 py-4">
+              <h4 class="text-white">Sobre Guild Ideas</h4>
+              <p class="text-muted">Somos una Guild que pertenece a Open Source Weekends, que ayuda a gente iniciada en la programación (y no tan iniciada) a darles conocimientos para que ellos puedan avanzar por si mismos.</p>
+            </div>
+            <div class="col-sm-4 offset-md-1 py-4">
+              <img src="img/osw-logo.jpg" alt="Logo Open Source Weekends" width="125" class="rounded mx-auto d-block">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="navbar navbar-dark bg-dark shadow-sm" id="nav-bg-color-marvel">
+        <div class="container d-flex justify-content-between">
+          <a class="navbar-brand" href="./index.html">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/MarvelLogo.svg/1600px-MarvelLogo.svg.png" class="d-inline-block align-top" width="150" height="50" alt="">
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        </div>
+      </div>
+    </header>
+    <searchBar></searchBar>
+    <div>Rejilla de cards<card></card><card></card><card></card></div>
+    <footer class="text-muted">
+      <div class="container">
+        <p class="float-right">
+          <a href="#" class="text-white"><i class="fas fa-arrow-up"></i> Volver arriba</a>
+        </p>
+        <p class="text-footer">WikiMarvel Guild Ideas - Design: <a href="https://twitter.com/mrcodedev/" target="_blank" class="text-danger">@MrCodedev</a></p>
+        <p class="text-footer"><small>Los logos y material utilizados de Marvel para esta guild, son sólo de proposito educativo, no nos lucramos de ello y toda actividad que realizamos es totalmente gratuita. </small></p>
+        <p class="text-footer"><small>Open Source Weekends - Guild Ideas 2019</small></p>
+      </div>
+    </footer>
+  </div>
+</template>
+
+<script>
+import Card from '../components/Card'
+import SearchBar from '../components/SearchBar'
+export default {
+  name: 'Home',
+  components: {
+    Card,
+    SearchBar
+  },
+  data () {
+    return {
+      datos: 'Hola mundo!'
+    }
+  }
+}
+
+</script>
