@@ -25,7 +25,7 @@
         </div>
       </div>
     </header>
-    <p>Componente SearchBar <input type="search"></p>
+    <searchBar></searchBar>
     <div>Rejilla de cards<card></card><card></card><card></card></div>
     <footer class="text-muted">
       <div class="container">
