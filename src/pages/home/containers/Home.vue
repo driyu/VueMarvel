@@ -41,8 +41,14 @@
 </template>
 
 <script>
+import Card from '../components/Card'
+import SearchBar from '../components/SearchBar'
 export default {
   name: 'Home',
+  components: {
+    Card,
+    SearchBar
+  },
   data () {
     return {
       datos: 'Hola mundo!'
