@@ -2,8 +2,7 @@
   <div>
     <headerBar />
     <searchBar />
-    <grid v-bind:cards="cards">
-    </grid>
+    <grid v-bind:cards="cards" />
     <footer class="text-muted">
       <div class="container">
         <p class="float-right">
