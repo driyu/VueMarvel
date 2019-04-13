@@ -15,8 +15,7 @@
   </div>
 
   <div class="row">
-    <card v-for="(card,index) in cards" v-bind:key="index" v-bind:card="card">
-    </card>
+    <card v-for="(card,index) in cards" v-bind:key="index" v-bind:card="card" />
   </div>
 
   <div class="button-group">
