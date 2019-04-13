@@ -9,9 +9,9 @@
 
 <script>
 import HeaderBar from '../../../components/HeaderBar'
-import FooterBar from '../../../components/FooterBar'
-import Card from '../components/Card'
 import SearchBar from '../components/SearchBar'
+import Card from '../components/Card'
+import FooterBar from '../../../components/FooterBar'
 export default {
   name: 'Home',
   components: {
