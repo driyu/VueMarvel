@@ -1,9 +1,9 @@
 <template>
   <div>
-    <headerBar>
-    </headerBar>
-    <searchBar></searchBar>
-    <div>Rejilla de cards<card></card><card></card><card></card></div>
+    <headerBar />
+    <searchBar />
+    <grid v-bind:cards="cards">
+    </grid>
     <footer class="text-muted">
       <div class="container">
         <p class="float-right">
@@ -19,19 +19,18 @@
 
 <script>
 import HeaderBar from '../../../components/HeaderBar'
-import Card from '../components/Card'
 import SearchBar from '../components/SearchBar'
+import Grid from '../components/Grid'
+
 export default {
   name: 'Home',
   components: {
-    Card,
+    HeaderBar,
     SearchBar,
-    HeaderBar
+    Grid
   },
-  data () {
-    return {
-      datos: 'Hola mundo!'
-    }
+  data: () => {
+    return {cards: [1, 2, 3, 4, 5, 6]}
   }
 }
 
