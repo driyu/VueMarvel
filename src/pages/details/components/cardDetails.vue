@@ -40,6 +40,7 @@
 
 <script>
 import RwvArticleActions from "@/components/ArticleActions";
+import { mapGetters } from 'vuex'
 
 export default {
   name: 'CardDetails', 
@@ -51,9 +52,13 @@ export default {
 
   }, 
   props: {},
-  methods: {}
+  methods: {},
+  computed: mapGetters([
+    'characters'
+  ])
 };
 </script>
+
 
 
 
