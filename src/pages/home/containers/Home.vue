@@ -12,6 +12,7 @@ import HeaderBar from '../../../components/HeaderBar'
 import SearchBar from '../components/SearchBar'
 import Grid from '../components/Grid'
 import FooterBar from '../../../components/FooterBar'
+import { mapActions, mapGetters, mapState } from 'vuex'
 
 export default {
   name: 'Home',
@@ -22,8 +23,14 @@ export default {
     FooterBar
   },
   data: () => {
-    return {cards: [1, 2, 3, 4, 5, 6]}
+    return { cards: [] }
+  },
+  mounted () {
+    this.fetchAllComics()
+  },
+  methods: {
+    ...mapActions([ 'fetchAllComics' ]),
+    ...mapState({ card: (state) => state.comics })
   }
 }
-
 </script>

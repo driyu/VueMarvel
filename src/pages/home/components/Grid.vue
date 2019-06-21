@@ -17,7 +17,7 @@
   <div class="row">
     <card v-for="(card,index) in cards" v-bind:key="index" v-bind:card="card" />
   </div>
-
+<span></span>
   <div class="button-group">
     <button type="button" class="btn btn-danger btn-lg btn-pagination">&lt; Previous</button>
     <span class="blank-space"></span>
@@ -30,10 +30,14 @@
 import Card from './Card.vue'
 
 export default {
+  data () {
+    return {}
+  },
   name: 'Grid',
   props: ['cards'],
   components: {
     Card
-  }
+  },
+ 
 }
 </script>

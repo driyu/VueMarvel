@@ -5,43 +5,43 @@ import axios from 'axios'
 Vue.use(Vuex)
 
 const state = {
-    data: []
+    comics: [1, 2, 3, 4, 5, 6],
 }
 
 const mutations = {
-    RECEIVE_CHARACTERS(state, { characters }) {
-        state.data = characters
+    saveCommits: (state, comics) => {
+        state.comics = comics
     }
 }
 
+const { a } = { a: 'asdfasfasdf', b: 'werwerwer' }
+
 const actions = {
-    async FETCH_CHARACTERS({ commit }, name) {
-        const url = `http://gateway.marvel.com/v1/public/characters?limit=12&name=${name}`
-        const { data } = await axios.get(url)
-        commit('RECEIVE_CHARACTERS', { characters: data.results })
-    }
+    fetchAllComics: ({ commit }) => {
+        return axios
+            .get('http://gateway.marvel.com/v1/public/comics?ts=1&apikey=957b04deccf33deb153b6ed793bf7a20&hash=f7ef70edf9842d21306e78a86691dcda')
+            .then(response => {
+                debugger
+                const comics = response.data.data.results
+                commit('saveCommits', comics)
+            })
+    },
+    fetchUser: ({ commit }) => {
+
+  }
 }
 
 const getters = {
-    characters: state => {
-        return state.data.map(data => {
-            return {
-                name: data.name,
-                url: data.urls[1] ? data.urls[1].url : data.urls[0].url,
-                image: `${data.thumbnail.path}.${data.thumbnail.extension}`,
-                description: data.description === '' ? 'No description listed for this character.' : data.description
-            }
-        })
-    }
+  getComics: (state) => state.comics
 }
 
 const store = new Vuex.Store({
-    state,
-    mutations,
-    actions,
-    getters
+  state,
+  mutations,
+  actions,
+  getters
 })
 
 export default store
 
-//http://gateway.marvel.com/v1/public/comics?ts=1&apikey=957b04deccf33deb153b6ed793bf7a20&hash=f7ef70edf9842d21306e78a86691dcda
+// http://gateway.marvel.com/v1/public/comics?ts=1&apikey=957b04deccf33deb153b6ed793bf7a20&hash=f7ef70edf9842d21306e78a86691dcda
